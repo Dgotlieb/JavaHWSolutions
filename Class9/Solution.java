@@ -129,6 +129,32 @@ public class Solution {
         js.executeScript("javascript:window.scrollBy(250,350)");
         Thread.sleep(4000); // this is here just to see the move after the scroll
     }
+	
+    // 6	
+    @Test
+    public void test8_controllers() {
+        chromeDriver.get("https://dgotlieb.github.io/Controllers/");
+        List<WebElement> list = chromeDriver.findElements(By.name("group1"));// exercise b
+        for (WebElement tempElement : list) {
+            if (tempElement.getAttribute("value").equals("Cheese")) {
+                tempElement.click();
+            }
+            System.out.println(tempElement.getAttribute("value"));
+        }
+        Select selection = new Select(chromeDriver.findElement(By.name("dropdownmenu")));
+        selection.selectByValue("Milk");
+        for (int i = 0; i < selection.getOptions().size(); i++) {
+            System.out.println(selection.getOptions().get(i).getText());
+        }
+    }
+
+    // 7 
+    @Test
+    public void test10_calculator_dimensions() {
+        chromeDriver.get("https://dgotlieb.github.io/WebCalculator/");
+        System.out.println(chromeDriver.findElement(By.id("two")).getRect().getHeight());
+        System.out.println(chromeDriver.findElement(By.id("six")).getRect().getWidth());
+    }
 
     @AfterClass
     public void afterAll() {
