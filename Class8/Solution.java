@@ -79,38 +79,10 @@ public class Solution {
 
     //8
     @Test
-    public void test8_controllers() {
-        chromeDriver.get("https://dgotlieb.github.io/Controllers/");
-        List<WebElement> list = chromeDriver.findElements(By.name("group1"));// exercise b
-        for (WebElement tempElement : list) {
-            if (tempElement.getAttribute("value").equals("Cheese")) {
-                tempElement.click();
-            }
-            System.out.println(tempElement.getAttribute("value"));
-        }
-        Select selection = new Select(chromeDriver.findElement(By.name("dropdownmenu")));
-        selection.selectByValue("Milk");
-        for (int i = 0; i < selection.getOptions().size(); i++) {
-            System.out.println(selection.getOptions().get(i).getText());
-        }
-    }
-
-    //9
-    @Test
     public void test9_facebook() {
         chromeDriver.get("https://www.facebook.com");
         chromeDriver.findElement(By.id("email")).sendKeys("admin");
         chromeDriver.findElement(By.id("pass")).sendKeys("admin");
-    }
-
-
-
-    //10
-    @Test
-    public void test10_calculator_dimensions() {
-        chromeDriver.get("https://dgotlieb.github.io/WebCalculator/");
-        System.out.println(chromeDriver.findElement(By.id("two")).getRect().getHeight());
-        System.out.println(chromeDriver.findElement(By.id("six")).getRect().getWidth());
     }
 
 
