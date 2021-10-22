@@ -75,8 +75,6 @@ public class Solution {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        JSUtils.JavascriptDragAndDrop(driver, locationElement, destinationElement);
     }
 
     @Test
