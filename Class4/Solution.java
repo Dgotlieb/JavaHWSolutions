@@ -40,7 +40,17 @@ public class Solution extends MyAbstractClass implements Inter {
         //11
         // Dog and Apple are in a separate package.
         // The method bark is protected and can't be used outside the package (only in inheritance)
-        // FIX: Make Apple class extend Dog - which makes no sense (: OR make bark public
+        // FIX: 
+	package fruits;
+
+	import animals.Dog;
+
+	public class Apple extends Dog {
+	    public static void main(String[] args) {
+		Apple a = new Apple();
+		a.bark();
+	    }
+	}
 		
 		
         //12
