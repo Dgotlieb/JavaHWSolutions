@@ -32,11 +32,8 @@ public class CountriesRestAPISolution {
         JSONArray mainJsonArray = new JSONArray(jsonData);
         JSONObject mainJsonObject = (JSONObject) mainJsonArray.get(0);
         String region = mainJsonObject.getString("region");
-        JSONArray callingCodes = mainJsonObject.getJSONArray("callingCodes");
         JSONArray borders = mainJsonObject.getJSONArray("borders");
-        JSONObject currencies = (JSONObject) mainJsonObject.getJSONArray("currencies").get(0);
-        String symbol = (String) currencies.get("symbol");
-        System.out.println(region + " " + callingCodes + " " + borders + " " + symbol);
+        System.out.println(region + " " + borders);
         chooseAgain();
     }
 
