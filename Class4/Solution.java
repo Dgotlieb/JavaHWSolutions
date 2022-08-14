@@ -61,13 +61,6 @@ public class Solution extends MyAbstractClass implements Inter {
 
         //14
         // D - All
-
-        //15
-        // Yes, when it makes no sense to continue
-        // Example: we want to test a website but can't connect to internet
-
-        //16
-        // RuntimeException
     }
 
     @Override
